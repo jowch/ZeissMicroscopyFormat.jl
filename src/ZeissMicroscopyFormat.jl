@@ -17,7 +17,7 @@ using BlockArrays
 # The license bars posting the API documentation online, but it does not prohibit other usages.
 
 # Segment IDs
-segment_id(str) = FileIO.padzeros(str, 16)
+segment_id(str) = lpad(str, 16, '0') # FileIO.padzeros(str, 16)
 const RAWDIR   = segment_id("ZISRAWDIRECTORY")
 const SUBBLOCK = segment_id("ZISRAWSUBBLOCK")
 const METADATA = segment_id("ZISRAWMETADATA")
